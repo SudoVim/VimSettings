@@ -54,8 +54,6 @@ map <C-h>   gT
 map <C-j>   <C-d>
 map <C-k>   <C-u>
 map <C-l>   gt
-map <C-n>   :set paste<CR>
-map <C-m>   :set nopaste<CR>
 map <C-p>   <C-w>q
 map <C-o>   :tabnew 
 
