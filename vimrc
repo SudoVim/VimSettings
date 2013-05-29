@@ -59,39 +59,3 @@ map <C-o>   :tabnew
 
 " kk is easier to hit than Esc
 inoremap kk <Esc>
-
-" Get rid of search highlighting easily
-nnoremap <leader><space> :noh<cr>
-
-" Requires NERDTree plugin
-nnoremap <silent> <F9> :NERDTreeToggle<CR>
-
-" Space and Shift Space allow for faster movement
-nnoremap <Space> <c-d>
-nnoremap <S-Space> <c-u>
-
-" Turn on relative number for easy copy/paste without counting lines
-map <Leader>rel :set relativenumber<CR>
-map <Leader>nrel :set nu<CR>
-
-" Trim trailing whitespace
-map <Leader>trim :%s/\s\+$//<CR>:w<CR>
-
-" Use the following files for flash development
-map <F2> 1G:r /luke/eflash/trunk/docs/file_header.c<CR>
-map <F3> :r /luke/eflash/trunk/docs/function_header.c<CR>
-
-" Use the following files for rs-flash development
-"map <F2> 1G:r /home/nfs/docs/Standards/Texas\ Memory\ Systems/programming/ \
-"           file_header_c.txt<CR>
-"map <F3> :r /home/nfs/docs/Standards/Texas\ Memory\ Systems/programming/ \
-"           function_header_c.txt<CR>
-
-" Open a file in the same directory of the open file, regardless of
-" the directory you spawned vim from
-map <Leader>ew :e <C-R>=expand("%:p:h") . "/" <CR>
-
-" Show whats in the yankring (for easy copy/paste between windows)
-map <Leader>ps :YRShow<CR>
-
-vmap gl :<C-U>!svn blame <C-R>=expand("%:p") <CR> \| sed -n <C-R>=line("'<") <CR>,<C-R>=line("'>") <CR>p <CR>
