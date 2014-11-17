@@ -36,12 +36,8 @@ colorscheme wombat256
 
 
 " ----------------------------- WHITESPACE ------------------------------------
-:highlight ExtraWhitespace ctermbg=red guibg=red
-:highlight HardTabs ctermbg=darkgreen guibg=lightgreen
-
-:match ExtraWhitespace /\s\+$/
-:2match HardTabs /\t\+/
-
+:set list!
+:set list listchars=tab:>-,trail:.,extends:>
 
 " ------------------------------- TAGS ----------------------------------------
 let &tags = findfile("tags", "**;")
