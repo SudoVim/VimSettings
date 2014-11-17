@@ -59,3 +59,6 @@ map <C-o>   :tabnew
 
 " kk is easier to hit than Esc
 inoremap kk <Esc>
+
+" ------------------------------- Syntastic -----------------------------------
+let g:syntastic_python_checkers = ['pylint']
