@@ -45,6 +45,12 @@ set cursorcolumn
 " let &tags = findfile("tags", "**;")
 
 
+" ----------------------------- ULTISNIPS -------------------------------------
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsEditSplit="context"
+let g:UltiSnipsSnippetDirectories=["UltiSnips"]
+
+
 " ------------------------------- MAPS ----------------------------------------
 map <A-q>   :close<CR>
 map <C-o>   :browse confirm e<CR>
