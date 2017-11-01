@@ -1,0 +1,69 @@
+priority 1
+
+# Script framework
+snippet scr "Framework for creating new Python3 scripts" b
+#!/usr/bin/env python3
+"""
+${1:script_description}
+"""
+
+import sys
+import argparse
+
+def main(argv):
+    """ main function """
+    parser = argparse.ArgumentParser(
+        description="$1",
+    )
+    args = parser.parse_args(argv)
+
+    $0
+
+    return 0
+
+if __name__ == '__main__':
+    sys.exit(main(sys.argv[1:]))
+$0
+endsnippet
+
+# Script framework
+snippet scr2 "Framework for creating new Python2 scripts" b
+#!/usr/bin/env python
+"""
+${1:script_description}
+"""
+from __future__ import absolute_import, division
+
+import sys
+import argparse
+
+def main(argv):
+    """ main function """
+    parser = argparse.ArgumentParser(
+        description="$1",
+    )
+    args = parser.parse_args(argv)
+
+    $0
+
+    return 0
+
+if __name__ == '__main__':
+    sys.exit(main(sys.argv[1:]))
+endsnippet
+
+snippet pdb "insert pdb.set_trace" b
+import pdb; pdb.set_trace()
+endsnippet
+
+snippet pdbm "insert pdb.post_mortem" b
+import pdb; pdb.post_mortem()
+endsnippet
+
+snippet try "Try / Except" bm
+try:
+    $1
+
+except ${2:Exception}:
+    $0
+endsnippet
