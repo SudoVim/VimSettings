@@ -58,5 +58,8 @@ map <C-o>   :tabnew
 " kk is easier to hit than Esc
 inoremap kk <Esc>
 
+" use '%%' to auto-complete current directory
+cabbr <expr> %% expand('%:p:h')
+
 " ------------------------------- Syntastic -----------------------------------
 let g:syntastic_python_checkers = ['pylint']
