@@ -42,7 +42,7 @@ set cursorcolumn
 :set list listchars=tab:>-,trail:.,extends:>
 
 " ------------------------------- TAGS ----------------------------------------
-let &tags = findfile("tags", "**;")
+" let &tags = findfile("tags", "**;")
 
 
 " ------------------------------- MAPS ----------------------------------------
