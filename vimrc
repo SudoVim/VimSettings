@@ -33,6 +33,8 @@ set wrap                " Wrap lines longer than textwidth (tw)
 " ------------------------------- COLORS --------------------------------------
 set t_Co=256
 colorscheme wombat256
+set cursorline
+set cursorcolumn
 
 
 " ----------------------------- WHITESPACE ------------------------------------
