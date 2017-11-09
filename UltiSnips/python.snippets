@@ -67,3 +67,50 @@ try:
 except ${2:Exception}:
     $0
 endsnippet
+
+snippet tryf "Try / Finally" bm
+try:
+    ${1:${VISUAL:pass}}
+
+finally:
+    $0
+endsnippet
+
+snippet def "Standard function definition" bm
+def ${1:fcn}($2):
+    """ ${3:docstring} """
+    $0
+endsnippet
+
+snippet class "Standard class definition" bm
+class ${1:ClassName}(${2:object}):
+    """ ${3:docstring} """
+
+    def __init__(self$4):
+        $0
+endsnippet
+
+snippet attr "Attributes using sphinx docs" bm
+.. attribute:: $1
+
+    $0
+endsnippet
+
+snippet cdef "Instance method" bm
+def ${1:fcn}(self$2):
+    """ ${3:docstring} """
+    $0
+endsnippet
+
+snippet int "create an int" bm
+int(${1:${VISUAL}})
+endsnippet
+
+snippet pprint "Pretty print a value" bm
+import pprint; pprint.pprint(${1:${VISUAL}})
+endsnippet
+
+snippet with "Use with" bm
+with ${1}:
+    ${0:${VISUAL:pass}}
+endsnippet

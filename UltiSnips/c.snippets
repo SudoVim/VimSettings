@@ -1,0 +1,16 @@
+priority 1
+
+snippet pat "Surround block with Py_xxxx_ALLOW_THREADS" bm
+Py_BEGIN_ALLOW_THREADS
+${1:${VISUAL}}
+Py_END_ALLOW_THREADS
+endsnippet
+
+snippet fcn "Create a C function" bm
+/**
+ * ${4:doc}
+ */
+${1:void} ${2:fcn}(${3:void}) {
+    $0
+}
+endsnippet
