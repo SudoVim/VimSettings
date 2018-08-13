@@ -96,6 +96,14 @@ snippet attr "Attributes using sphinx docs" bm
     $0
 endsnippet
 
+snippet aattr "Auto-attributes using sphinx docs" bm
+.. autoattribute:: $1
+endsnippet
+
+snippet ameth "Auto-method using sphinx docs" bm
+.. automethod:: $1
+endsnippet
+
 snippet cdef "Instance method" bm
 def ${1:fcn}(self$2):
     """ ${3:docstring} """
