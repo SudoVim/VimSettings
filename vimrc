@@ -32,7 +32,7 @@ set wrap                " Wrap lines longer than textwidth (tw)
 
 " ------------------------------- COLORS --------------------------------------
 set t_Co=256
-colorscheme wombat256
+colorscheme alduin
 set cursorline
 set cursorcolumn
 
@@ -54,10 +54,12 @@ let g:UltiSnipsSnippetDirectories=["UltiSnips"]
 " ------------------------------- MAPS ----------------------------------------
 map <A-q>   :close<CR>
 map <C-o>   :browse confirm e<CR>
+map <C-l>   gt
+map <C-right> :tabm +1<CR>
+map <C-left> :tabm -1<CR>
 map <C-h>   gT
 map <C-j>   <C-d>
 map <C-k>   <C-u>
-map <C-l>   gt
 map <C-p>   <C-w>q
 map <C-o>   :tabnew 
 
