@@ -70,4 +70,5 @@ inoremap kk <Esc>
 cabbr <expr> %% expand('%:p:h')
 
 " ------------------------------- Syntastic -----------------------------------
-let g:syntastic_python_checkers = ['pylint']
+let g:syntastic_python_checkers = ['pylint3']
+let g:syntastic_go_checkers = ['golint']
