@@ -1,0 +1,63 @@
+# echo debug
+snippet edb "Framework for injecting debug using echo" b
+echo json_encode($1) . "\n";
+endsnippet
+
+# echo debug with pretty-print
+snippet edbp "Framework for injecting debug using echo with pretty-print" b
+echo json_encode($1, JSON_PRETTY_PRINT) . "\n";
+endsnippet
+
+# log debug
+snippet ldb "Framework for injecting debug using Log" b
+\Illuminate\Support\Facades\Log::info(json_encode($1));
+endsnippet
+
+# log debug with pretty-print
+snippet ldbp "Framework for injecting debug using Log with pretty-print" b
+\Illuminate\Support\Facades\Log::info(json_encode($1, JSON_PRETTY_PRINT));
+endsnippet
+
+# snippet for class
+snippet cls "Framework for generating a class" b
+<?php
+
+namespace PullRequest\\$1;
+
+class ${2:ClassName}
+{
+    $3
+}
+endsnippet
+
+# snippet for test class
+snippet tcls "Framework for generating a test for a class" b
+<?php
+
+namespace PullRequest\\${1};
+
+use PullRequest\Common\Helpers\Testing\TestSetup;
+use Tests\AppTestCase;
+
+class ${2:ClassName}Test extends AppTestCase
+{
+    private $setup;
+    $3
+
+    protected function setUp(): void
+    {
+        parent::setUp();
+
+        $this->setup = new TestSetup();
+        $4
+    }
+
+    $5
+}
+endsnippet
+
+snippet if "If statement" b
+if ($2) {
+    ${1:${VISUAL:pass}}
+}
+endsnippet

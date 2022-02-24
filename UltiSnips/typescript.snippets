@@ -1,0 +1,64 @@
+# React component
+snippet comp "Framework for creating new Typescript React components" b
+import React from 'react';
+import { connect } from 'react-redux';
+import { useTheme } from "@material-ui/core/styles";
+
+export type Props = {
+};
+
+export const ${1:ComponentName}: React.FC<Props> = ({}) => {
+  const theme = useTheme();
+  $0
+};
+
+function mapStateToProps(state: any, ownProps: {}) {
+  return {};
+}
+
+export default connect(mapStateToProps)($1);
+endsnippet
+
+# React component test
+snippet tcomp "Framework for testing newly created Typescript React components" b
+import React, { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { shallow } from "enzyme";
+
+import { ${1:ComponentName} } from "./$1";
+
+jest.mock("react", () => {
+  const react = jest.requireActual("react");
+  return {
+    ...react,
+    useEffect: jest.fn(),
+  };
+});
+
+jest.mock("react-redux", () => {
+  const reactRedux = jest.requireActual("react-redux");
+
+  return {
+    ...reactRedux,
+    useDispatch: jest.fn(),
+  };
+});
+
+describe('$1 tests', () => {
+  let props = null;
+  let dispatch = null;
+  beforeEach(() => {
+    props = {
+      $2
+    };
+    dispatch = jest.fn();
+    useEffect.mockReset();
+    useDispatch.mockReset();
+    useDispatch.mockReturnValue(dispatch);
+  });
+  it('renders the component with empty results', () => {
+    const component = shallow(<$1 {...props} />);
+    $0
+  });
+});
+endsnippet

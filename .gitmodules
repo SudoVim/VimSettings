@@ -19,3 +19,9 @@
 [submodule "bundle/node"]
 	path = bundle/node
 	url = https://github.com/moll/vim-node.git
+[submodule "bundle/vim-jsx-typescript"]
+	path = bundle/vim-jsx-typescript
+	url = https://github.com/peitalin/vim-jsx-typescript.git
+[submodule "bundle/typescript-vim"]
+	path = bundle/typescript-vim
+	url = https://github.com/leafgarland/typescript-vim.git

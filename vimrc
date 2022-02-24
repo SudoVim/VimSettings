@@ -72,3 +72,10 @@ cabbr <expr> %% expand('%:p:h')
 " ------------------------------- Syntastic -----------------------------------
 let g:syntastic_python_checkers = ['pylint3']
 let g:syntastic_go_checkers = ['golint']
+
+" ------------------------- Auto-Discover Typescript --------------------------
+augroup SyntaxSettings
+    autocmd!
+    autocmd BufNewFile,BufRead *.tsx set filetype=typescript
+    autocmd BufNewFile,BufRead *.ts set filetype=typescript
+augroup END
