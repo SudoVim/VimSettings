@@ -79,3 +79,8 @@ augroup SyntaxSettings
     autocmd BufNewFile,BufRead *.tsx set filetype=typescript
     autocmd BufNewFile,BufRead *.ts set filetype=typescript
 augroup END
+
+" ---------------------- FileType Specific Formatting -------------------------
+
+autocmd FileType javascript :setlocal ts=2 sw=2 sts=2
+autocmd FileType typescript :setlocal ts=2 sw=2 sts=2
