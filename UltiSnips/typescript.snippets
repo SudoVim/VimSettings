@@ -65,6 +65,54 @@ describe('$1 tests', () => {
 });
 endsnippet
 
+# React component test
+snippet tcompv "Framework for testing newly created Typescript React components using vitest" b
+import React, { useEffect } from "react";
+import { vi, describe, beforeEach, it, expect } from 'vitest';
+import { useDispatch, useSelector } from "react-redux";
+import { shallow } from "enzyme";
+
+import { ${1:ComponentName} } from "./$1";
+
+vi.mock("react", async (importOriginal) => {
+  const react = await importOriginal();
+
+  return {
+    ...react,
+    useEffect: vi.fn(),
+  };
+});
+
+vi.mock("react-redux", async (importOriginal) => {
+  const reactRedux = await importOriginal();
+
+  return {
+    ...reactRedux,
+    useDispatch: vi.fn(),
+    useSelector: vi.fn(),
+  };
+});
+
+describe('$1 tests', () => {
+  let props = null;
+  let dispatch = null;
+  beforeEach(() => {
+    props = {
+      $2
+    };
+    dispatch = vi.fn();
+    useEffect.mockReset();
+    useDispatch.mockReset();
+    useDispatch.mockReturnValue(dispatch);
+    useSelector.mockReset();
+  });
+  it('renders the component with empty results', () => {
+    const component = shallow(<$1 {...props} />);
+    $0
+  });
+});
+endsnippet
+
 snippet descr "Start a 'describe' for tests" b
 describe('$1', () => {
   it('$2', () => {
@@ -85,12 +133,22 @@ jest.mock("${1:mock/import}", () => {
 });
 endsnippet
 
+# Snippet for creating a new mock for vitest
+snippet tmockv "Framework for generating a vitest mock" b
+vi.mock("${1:mock/import}", async (importOriginal) => {
+  const original = await importOriginal();
+
+  return {
+    ...original,
+    ${0}
+  };
+});
+endsnippet
+
 # Snippet for mocking out useSelector
 snippet tselect "Function for mocking useSelector for a component" b
 function mockSelector({
   ${1:val},
-}: {
-  $1?: ${2:Type};
 }) {
   let iteration = -1;
   useSelector.mockImplementation(() => {
